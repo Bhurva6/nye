@@ -1,14 +1,26 @@
 import React, { useState } from 'react';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../App.js'; // Import your Firebase configuration
 
-const InputForm = ({ addResolution }) => {
+const InputForm = () => {
   const [text, setText] = useState('');
   const [name, setName] = useState('');
 
-  const handlePost = () => {
+  const handlePost = async () => {
     if (text && name) {
-      addResolution({ text, name });
-      setText('');
-      setName('');
+      // Add the document to Firestore
+      try {
+        const docRef = await addDoc(collection(db, 'resolutions'), {
+          resolution: text,
+          name,
+        });
+
+        // Clear the input fields
+        setText('');
+        setName('');
+      } catch (e) {
+        console.error('Error adding document: ', e);
+      }
     }
   };
 
