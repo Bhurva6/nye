@@ -5,7 +5,6 @@ const AllResolutions = ({ resolutions }) => {
     if (!resolutions || resolutions.length === 0) {
       return <p>No resolutions yet.</p>;
     }
-  
     return (
       <div className="container">
         {resolutions.map((res, index) => (
