@@ -47,7 +47,7 @@ const App = () => {
     };
 
     fetchData();
-  }, []);
+  }, [resolutions]);
 
   const addResolution = (newResolution) => {
     setResolutions([...resolutions, newResolution]);
@@ -73,3 +73,4 @@ const App = () => {
 
 
 export default App;
+export { db }
