@@ -16,7 +16,6 @@ const Navbar = () => {
 };
 
 
-// ye local storage method hai  - temporary - implement firebase here
 const firebaseConfig = {
   apiKey: "AIzaSyBbyCdmxeoN8fyE9l89iyCQCJEPvPmI7GU",
   authDomain: "new-year-resolution-21fdd.firebaseapp.com",
