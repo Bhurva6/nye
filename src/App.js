@@ -49,17 +49,13 @@ const App = () => {
     fetchData();
   }, [resolutions]);
 
-  const addResolution = (newResolution) => {
-    setResolutions([...resolutions, newResolution]);
-  };
-
   return (
     <Router>
       <div>
         <Navbar /> 
         <div style={{ marginTop: '60px' }}> 
           <Routes>
-            <Route path="/" element={<InputForm addResolution={addResolution} />} />
+            <Route path="/" element={<InputForm />} />
             <Route
               path="/resolutions"
               element={<AllResolutions resolutions={resolutions} />}
