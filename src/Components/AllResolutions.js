@@ -5,7 +5,7 @@ const AllResolutions = ({ resolutions }) => {
   return (
     <div className="container">
       {resolutions.map((res, index) => (
-        <ResolutionBox key={index} resolution={res.text} name={res.name} />
+        <ResolutionBox key={index} resolution={res.resolution} name={res.name} />
       ))}
     </div>
   );
