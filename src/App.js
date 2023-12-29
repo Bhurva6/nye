@@ -32,7 +32,7 @@ const colRef = collection(db, 'resolutions');
 
 const App = () => {
   // Load resolutions from local storage on initial load
-  const [resolutions, setResolutions] = useState(storedResolutions);
+  const [resolutions, setResolutions] = useState();
 
   useEffect(() => {
     // Fetch data from Firebase and update state
