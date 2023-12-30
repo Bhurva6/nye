@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import InputForm from './Components/InputForm';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import axios from 'axios';
 import AllResolutions from './Components/AllResolutions'; 
 import './styles.css';
 
@@ -32,21 +33,36 @@ const colRef = collection(db, 'resolutions');
 const App = () => {
   // Load resolutions from local storage on initial load
   const [resolutions, setResolutions] = useState();
+  const [name, setName] = useState(() => {
+    // Initialize name from local storage or default value
+    return localStorage.getItem('apiName') || '';
+  });
 
   useEffect(() => {
-    // Fetch data from Firebase and update state
-    const fetchData = async () => {
+    const fetchDataAndName = async () => {
       try {
+        // Fetch data from Firebase
         const snapshot = await getDocs(colRef);
         const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
         setResolutions(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
+        console.log(data);
 
-    fetchData();
-  }, [resolutions]);
+        // Fetch name from the external API
+        if (!name) {
+          const response = await axios.get('https://randomuser.me/api/');
+          const apiName = response.data.results[0].name.first;
+          console.log('api');
+          setName(apiName);
+          // Store the name in local storage
+          localStorage.setItem('apiName', apiName);
+        }
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+    };
+  
+    fetchDataAndName();
+  }, [name]);
 
   return (
     <Router>
@@ -54,7 +70,7 @@ const App = () => {
         <Navbar /> 
         <div style={{ marginTop: '60px' }}> 
           <Routes>
-            <Route path="/" element={<InputForm />} />
+            <Route path="/" element={<InputForm name={name} />} />
             <Route
               path="/resolutions"
               element={<AllResolutions resolutions={resolutions} />}
