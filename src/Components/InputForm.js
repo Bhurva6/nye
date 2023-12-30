@@ -41,7 +41,7 @@ const InputForm = ({ name ) => {
             paddingBottom:50,
 
         }}>
-            Hi, "name" !
+            Hi, "{name}"!
         </div>
         <div style={{
             textAlign:"center",
