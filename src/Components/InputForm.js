@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../App.js'; // Import your Firebase configuration
 
-const InputForm = () => {
+const InputForm = ({ name ) => {
   const [text, setText] = useState('');
   const [isPosted, setIsPosted] = useState(false);
   //const [name, setName] = useState('');
@@ -15,7 +15,7 @@ const InputForm = () => {
         
         const docRef = await addDoc(collection(db, 'resolutions'), {
           resolution: text,
-          //name,
+          name,
         });
         setText('');
         setIsPosted(true);
