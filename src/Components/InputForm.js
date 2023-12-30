@@ -89,7 +89,9 @@ const InputForm = () => {
   margin: "0 auto", 
   
 }}
-onClick={"handlePost"}>Post</button>
+onClick={handlePost}>
+    Post
+    </button>
     </div>
   );
 };

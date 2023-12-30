@@ -17,12 +17,12 @@ const Navbar = () => {
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBbyCdmxeoN8fyE9l89iyCQCJEPvPmI7GU",
-  authDomain: "new-year-resolution-21fdd.firebaseapp.com",
-  projectId: "new-year-resolution-21fdd",
-  storageBucket: "new-year-resolution-21fdd.appspot.com",
-  messagingSenderId: "815408232312",
-  appId: "1:815408232312:web:19aebdf01c47ceaf227a8d"
+  apiKey: "AIzaSyBNEHmJluP2MzKX8cK7exVH0Px1cInah5I",
+  authDomain: "new-year-resolutions-65428.firebaseapp.com",
+  projectId: "new-year-resolutions-65428",
+  storageBucket: "new-year-resolutions-65428.appspot.com",
+  messagingSenderId: "852746778495",
+  appId: "1:852746778495:web:8c78a4821cdb5e9b0a0c4a"
 };
 
 const app = initializeApp(firebaseConfig);
