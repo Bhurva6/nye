@@ -2,13 +2,16 @@ import React from 'react';
 import ResolutionBox from './ResolutionBox';
 
 const AllResolutions = ({ resolutions }) => {
-  return (
-    <div className="container">
-      {resolutions.map((res, index) => (
+    if(!resolutions || resolutions.length == 0){
+        return <p>No resolutions yet</p>
+    }
+    return(
+        <div className='container'>
+            {resolutions.map((res, index) => (
         <ResolutionBox key={index} resolution={res.resolution} name={res.name} />
       ))}
-    </div>
-  );
+        </div>
+    );
 };
 
 export default AllResolutions;

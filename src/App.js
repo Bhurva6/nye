@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import InputForm from './Components/InputForm';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import AllResolutions from './Components/AllResolutions'; // New component for displaying all resolutions
+import AllResolutions from './Components/AllResolutions'; 
 import './styles.css';
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <Link to="/">Home</Link>
-      <Link to="/resolutions">Resolutions</Link>
+      <Link to="/"  style={{ marginRight: '40px' }}>Post Yours</Link>
+      <Link to="/resolutions"><span role="img" aria-label="globe">🌍</span> See Others</Link>
     </nav>
   );
 };
