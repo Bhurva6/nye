@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../App.js'; // Import your Firebase configuration
 
-const InputForm = ({ name ) => {
+const InputForm = ({ name }) => {
   const [text, setText] = useState('');
   const [isPosted, setIsPosted] = useState(false);
   //const [name, setName] = useState('');
@@ -30,7 +30,6 @@ const InputForm = ({ name ) => {
       }
     }
   };
-// the cursor is not aligning at the top of the text input box, it's in the middle
   return (
     <div >
         <div style={{
@@ -39,9 +38,9 @@ const InputForm = ({ name ) => {
             fontWeight:"bold",
             color:"white",
             paddingBottom:50,
-
+            textDecoration: 'underline',
         }}>
-            Hi, "name" !
+            Hi, {name}!
         </div>
         <div style={{
             textAlign:"center",
@@ -51,41 +50,29 @@ const InputForm = ({ name ) => {
             fontWeight:'bold'
 
         }}>This is an anonymous website to put in your "new years goal" for 2024 that you are going to set for yourself and so will millions of others that you can check out too. This is where the world will put their silly, personal (not reccomended) and cool things that they want to do in 2024. Happy New Years :) </div>
+     
       <input
   type="text"
   placeholder="Enter resolution (max 100 words)"
   value={text}
   onChange={(e) => setText(e.target.value)}
   style={{
-    width: '900px',
-    height: '250px',
+    width: '800px',
+    height:'200px', 
     padding: '10px',
-    border: '0px solid transparent',
+    border: '1px solid #ccc',
     borderRadius: '5px',
-    borderColor: 'black',
     boxSizing: 'border-box',
-    margin: 'auto',
-    display: 'block',
-    position: 'relative',
-    textAlign: 'left', 
-    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+    textAlign: 'left',
+    marginLeft:'350px',
+    fontSize:'38px'
+
+
   }}
 />
-<style>
-  {`
-    input::placeholder {
-      text-align: left; /* Align placeholder text to the right */
-      direction: rtl;
-      position: absolute;
-      top: 0;
-      right: 0px; /* Adjust right spacing for placeholder */
-      padding: 10px;
-      width: calc(100% - 20px); 
-      height: calc(100% - 20px); 
-      box-sizing: border-box;
-    }
-  `}
-</style>
+
+
+
 
 <div style={{paddingBottom:30}}></div>
 
@@ -114,6 +101,3 @@ const InputForm = ({ name ) => {
 };
 
 export default InputForm;
-
-
-//<input type="text" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)}/>

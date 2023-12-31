@@ -45,13 +45,11 @@ const App = () => {
         const snapshot = await getDocs(colRef);
         const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
         setResolutions(data);
-        console.log(data);
 
         // Fetch name from the external API
         if (!name) {
           const response = await axios.get('https://randomuser.me/api/');
           const apiName = response.data.results[0].name.first;
-          console.log('api');
           setName(apiName);
           // Store the name in local storage
           localStorage.setItem('apiName', apiName);
@@ -62,6 +60,7 @@ const App = () => {
     };
   
     fetchDataAndName();
+    
   }, [name]);
 
   return (
