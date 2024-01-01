@@ -40,7 +40,7 @@ const InputForm = ({ name }) => {
             paddingBottom:50,
             textDecoration: 'underline',
         }}>
-            Hi, {name}!
+            Hi, "{name}"!
         </div>
         <div style={{
             textAlign:"center",
