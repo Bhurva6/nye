@@ -49,7 +49,7 @@ const InputForm = ({ name }) => {
             marginBottom:40,
             fontWeight:'bold'
 
-        }}>This is an anonymous website to put in your "new years goal" for 2024 that you are going to set for yourself and so will millions of others that you can check out too, Hence the name that you see above is to protect your identity and be 100% anonymous ;)  This is where the world will put their silly, personal (not reccomended) and cool things that they want to do in 2024. Happy New Years :) </div>
+        }}>This is an anonymous website to put in your "new years goal" for 2024 that you are going to set for yourself and so will everyone else on Earth, hence the name that you see above is to protect your identity and be 100% anonymous (we promise) ;) This is where the world will put their silly, personal, professional and absolutely random things that they want to do in 2024. Happy New Years :) </div>
      
       <input
   type="text"
