@@ -93,7 +93,7 @@ const InputForm = ({ name }) => {
       </button>
       {isPosted && (
         <div style={{ textAlign: 'center', marginTop: '20px', color: 'green', fontWeight:'bold', fontSize:'24' }}>
-          Your resolution is now visible to the world ! 
+          Your resolution is now visible to the world ! Refresh page to see it on the other tab.
         </div>
       )}
     </div>
